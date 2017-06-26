@@ -107,6 +107,11 @@ RCT_EXPORT_METHOD(obtainConsent:(NSDictionary *)options resolver:(RCTPromiseReso
     });
 }
 
+RCT_EXPORT_METHOD(getClientMetadataID:(RCTResponseSenderBlock)successCallback) {
+    NSString *metadataID = [PayPalMobile clientMetadataID];
+    successCallback(@[metadataID]);
+}
+
 #pragma mark Paypal Delegate
 
 - (void)payPalPaymentDidCancel:(PayPalPaymentViewController *)paymentViewController
